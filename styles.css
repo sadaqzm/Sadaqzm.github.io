@@ -1,0 +1,46 @@
+body { 
+    background-color: #dacbdd; 
+    color:rgb(127, 14, 110);
+    margin: 20pt;
+    font-family:Arial, sans-serif;
+    font-size: 12pt; }
+h2 {
+        font-family: "Arial", sans-serif;
+        color:rgb(127, 14, 110);
+        margin: 0pt;
+        font-size: 20pt 
+    }
+    h3 {
+        font-family: "Calibri", sans-serif;
+        color:rgb(127, 14, 110);
+        font-size: 16pt;
+        font-weight: bold;
+    }
+
+    .container {
+        width: 100%;
+        margin: 0 auto;
+    }
+
+    table {
+        width: 100%;
+    }
+
+    .text-wrapper,
+    .description-wrapper {
+        padding: 10px;
+    }
+
+    ul {
+        list-style-type: none;
+        padding: 0;
+    }
+
+    .text-wrapper h2,
+    .description-wrapper h2 {
+        margin-top: 50;
+    }
+
+    nav a:link {color:cadetblue ;}
+    nav a:visited {color:aqua; font:italic}
+    nav a:hover {color:beige;}
