@@ -1,90 +1,299 @@
 <index.html>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<title>Sadaq Azam Portfolio Website</title>
-<meta charset="utf-8">
-<link rel="stylesheet" href="styles.css">
-</head>
-<body>
-<h2>Sadaq Azam Portfolio</h2>
-<div class="container">
-    <table width="1000px" border="1px">
-    <tr>
-        <td>
-            <div class="text-wrapper">
-            <h4> Links </h4>
-            <nav>
-                <ul>
-                    <li> <a href="https://www.linkedin.com/in/sadaqazm/"> Linkedin </a></li>
-                </ul>
-            </nav>
-            </div>
-        </td>
-        <td>
-            <div class="description-wrapper">
-                <h4>Description</h4>
-            <ul>
-                <li> Linkedin Profile</li>
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+    <title>Sadaq Azam Portfolio Website</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="styles.css">
+    </head>
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+        <script src="https://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+        <script>
+            $(document).ready(function () {
+    
+                //clicks then prompt user to ask the user name
+                $("#btnClick").on("click", function () {
+                    var name = prompt("Please enter your name");
+                    //Get the user name set it to the tag so it will show on the web site
+                    $("#spUserName").html(" Welcome " + name + " <3");
+                });
+    
+                //When user clicked on Image -> will open Enlarge of image
+                $('#imgCupCake').on("click", function () {
+                    $("#dialog").dialog();
+                    
+                });
+    
+                //mouse over event on navigatin bar
+                $(".nav").on("mouseover", function () {
+                    //setbackground color 
+                    $(this).parent().css("background-color", "black");
+                })
+    
+                 //mouse out event on navigatin bar
+                $(".nav").on("mouseout", function () {
+                    //set background color
+                    $(this).parent().css("background-color", "purple");
+                })
+            });
+        </script>
+       
+        <style>
+            nav {
+                display: block;
+                text-align: center;
+            }
+    
+                nav ul {
+                    margin: 0;
+                    padding: 0;
+                    list-style: none;
+                }
+    
+            .nav a {
+                display: block;
+                background: #111;
+                color: #fff;
+                text-decoration: none;
+                padding: 0.8em 1.8em;
+                text-transform: uppercase;
+                font-size: 80%;
+                letter-spacing: 2px;
+                text-shadow: 0 -1px 0 #000;
+                position: relative;
+            }
+    
+            .nav {
+                vertical-align: top;
+                display: inline-block;
+                box-shadow: 1px -1px -1px 1px #000, -1px 1px -1px 1px #fff, 0 0 6px 3px #fff;
+                border-radius: 6px;
+            }
+    
+                .nav li {
+                    position: relative;
+                }
+    
+                .nav > li {
+                    float: left;
+                    border-bottom: 4px #aaa solid;
+                    margin-right: 1px;
+                }
+    
+                    .nav > li > a {
+                        margin-bottom: 1px;
+                        box-shadow: inset 0 2em .33em -0.5em #3d3131;
+                    }
+    
+                    .nav > li:hover,
+                    .nav > li:hover > a {
+                        border-bottom-color: rgb(62, 14, 120);
+                    }
+    
+                .nav li:hover > a {
+                    color: rgb(133, 25, 126);
+                }
+    
+                .nav > li:first-child {
+                    border-radius: 4px 0 0 4px;
+                }
+    
+                    .nav > li:first-child > a {
+                        border-radius: 4px 0 0 0;
+                    }
+    
+                .nav > li:last-child {
+                    border-radius: 0 0 4px 0;
+                    margin-right: 0;
+                }
+    
+                    .nav > li:last-child > a {
+                        border-radius: 0 4px 0 0;
+                    }
+    
+                .nav li li a {
+                    margin-top: 1px;
+                }
+    
+                .nav li a:first-child:nth-last-child(2):before {
+                    content: "";
+                    position: absolute;
+                    height: 0;
+                    width: 0;
+                    border: 5px solid transparent;
+                    top: 50%;
+                    right: 5px;
+                }
+                .nav ul {
+                    position: absolute;
+                    white-space: nowrap;
+                    border-bottom: 5px solid rgb(159, 13, 140);
+                    z-index: 1;
+                    left: -99999em;
+                }
+    
+                .nav > li:hover > ul {
+                    left: auto;
+                    margin-top: 5px;
+                    min-width: 100%;
+                }
+    
+                .nav > li li:hover > ul {
+                    left: 100%;
+                    margin-left: 1px;
+                    top: -1px;
+                }
+        
+                .nav > li > a:first-child:nth-last-child(2):before {
+                    border-top-color: #aaa;
+                }
+    
+                .nav > li:hover > a:first-child:nth-last-child(2):before {
+                    border: 5px solid transparent;
+                    border-bottom-color: rgb(133, 14, 117);
+                    margin-top: -5px
+                }
+    
+                .nav li li > a:first-child:nth-last-child(2):before {
+                    border-left-color: #aaa;
+                    margin-top: -5px
+                }
+    
+                .nav li li:hover > a:first-child:nth-last-child(2):before {
+                    border: 5px solid transparent;
+                    border-right-color: rgb(121, 11, 127);
+                    right: 10px;
+                }
+        </style>
+    </head>
+    <body>
+    
+        <nav>
+            <ul class="nav">
+    
+                <li>
+                    <a href="PromptUserName.html">Main Page</a>
+                    <ul>
+                        <li><a href="#">Education</a></li>
+                        <li><a href="#">Key Courses</a></li>
+                        <li><a href="#">Bootcamps</a></li>
+                        <li><a href="#">Links</a></li>
+                    </ul>
+                </li>
+                <li> <a href="PromptUserName.html">About Me</a></li>
+                <li>
+                    <a href="#">Contact</a>
+                    <ul>
+                        <li><a href="#">Team Contact</a></li>
+                        <li>
+                            <a href="#">Mobile</a>
+                            <ul>
+                                <li><a href="#">Sadaq</a></li>
+                                <li><a href="#">Sadaq 2</a></li>
+                               
+                            </ul>
+                        </li>
+                        <li><a href="#">Email</a></li>
+                        <li><a href="#">LinkedIn</a></li>
+                    </ul>
+                </li>
+    
             </ul>
-            </div>
-        </td>
-    </tr>
-    </table>
-    <table width="1000px" border="1px">
+        </nav>
+    
+        <div id="divHeading">
+            <h2 id="spUserName" style="color:rgb(201, 26, 152)"></h2>
+        </div>
+        <button value="Click Me" id="btnClick" style="height:30px;width:100px">Click Me</button>
+    
+        <div>
+            <img src="itm780l5.webp" id="me" style="height:200px;width:300px" />
+        </div>
+    
+        <div id="dialog" style="display: none; ">
+            <img src="itm780l5.webp">
+        </div>
+    </body>
+    <body>
+    <h2>Sadaq Azam Portfolio</h2>
+    <div class="container">
+        <table width="1000px" border="1px">
         <tr>
             <td>
                 <div class="text-wrapper">
+                <h4> Links </h4>
                 <nav>
                     <ul>
-                    
-                        <li> <a href="mailto:sadaqazam@gmail.com"> Email</a></li>
+                        <li> <a href="https://www.linkedin.com/in/sadaqazm/"> Linkedin </a></li>
                     </ul>
                 </nav>
                 </div>
             </td>
             <td>
                 <div class="description-wrapper">
+                    <h4>Description</h4>
                 <ul>
-        
-                    <li> Contact Information</li>
+                    <li> Linkedin Profile</li>
                 </ul>
                 </div>
             </td>
         </tr>
         </table>
-</div>
-
-<h3>Education</h3>
-<hr>
-<p>BComm | Business Technology Management | Toronto Metropolitan University</p>
-
-<h3>Key Courses</h3>
-</ul>
-    <li> Business Intelligence and Analytics: Use of statistical and quantitative analysis, exploratory and predictive models, <br> and fact-based management. Lab exercises using Python</li>
-    <br>
-    <li> IS Project Management: Applying the tools and techniques of project management to IT-enabled process improvement projects</li>
-    <br>
-    <li> Marketing Metrics and Analysis: Case method learning for critically analyzing situations based on marketing research <br> and ethical decision making skills</li>
-    <br>
-    <li> Fundamentals of Programming: Use of fundamental principles of object-oriented program design. Hands on Python programming <br>to reinforce theoretical concepts</li>
-    <br>
-    <li> Information Systems Security and Privacy: Exploring computer security techniques for detecting and preventing security <br> violations</li>
-</ul>
-<h3>Bootcamp Certificates</h3>
-<hr>
-<ol>
-    <li>Power of Excel Business Fundamentals</li>
-    <li>Marking Bootcamps</li>
-    <ul>
-        <li>Graphic/Visual Design</li>
-        <li>Social Media Marketing</li>
-        <li>Personal Branding</li>
+        <table width="1000px" border="1px">
+            <tr>
+                <td>
+                    <div class="text-wrapper">
+                    <nav>
+                        <ul>
+                        
+                            <li> <a href="mailto:sadaqazam@gmail.com"> Email</a></li>
+                        </ul>
+                    </nav>
+                    </div>
+                </td>
+                <td>
+                    <div class="description-wrapper">
+                    <ul>
+            
+                        <li> Contact Information</li>
+                    </ul>
+                    </div>
+                </td>
+            </tr>
+            </table>
+    </div>
+    
+    <h3>Education</h3>
+    <hr>
+    <p>BComm | Business Technology Management | Toronto Metropolitan University</p>
+    
+    <h3>Key Courses</h3>
     </ul>
-
-</ol>
-</body>
-</html>
-
-
-
+        <li> Business Intelligence and Analytics: Use of statistical and quantitative analysis, exploratory and predictive models, <br> and fact-based management. Lab exercises using Python</li>
+        <br>
+        <li> IS Project Management: Applying the tools and techniques of project management to IT-enabled process improvement projects</li>
+        <br>
+        <li> Marketing Metrics and Analysis: Case method learning for critically analyzing situations based on marketing research <br> and ethical decision making skills</li>
+        <br>
+        <li> Fundamentals of Programming: Use of fundamental principles of object-oriented program design. Hands on Python programming <br>to reinforce theoretical concepts</li>
+        <br>
+        <li> Information Systems Security and Privacy: Exploring computer security techniques for detecting and preventing security <br> violations</li>
+    </ul>
+    <h3>Bootcamp Certificates</h3>
+    <hr>
+    <ol>
+        <li>Power of Excel Business Fundamentals</li>
+        <li>Marking Bootcamps</li>
+        <ul>
+            <li>Graphic/Visual Design</li>
+            <li>Social Media Marketing</li>
+            <li>Personal Branding</li>
+        </ul>
+    
+    </ol>
+    </body>
+    </html>
+    
+    
+    
+    
