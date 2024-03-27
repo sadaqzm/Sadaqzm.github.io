@@ -3,7 +3,72 @@
     <html lang="en">
     <head>
     <title>Sadaq Azam Portfolio Website</title>
-    <meta charset="utf-8">
+
+    <meta charset="utf-8"><body>
+    <!-- Navigation and other existing code -->
+    
+    <!-- Font Size Changing Options -->
+    <div id="fontSizeOptions">
+        <button id="increaseFontSize">Increase Font Size</button>
+        <button id="decreaseFontSize">Decrease Font Size</button>
+    </div>
+
+    <!-- Color Change Options -->
+    <div id="colorThemeOptions">
+        <label for="colorTheme">Select Color Theme:</label>
+        <select id="colorTheme">
+            <option value="default">Default</option>
+            <option value="highContrast">High Contrast</option>
+            <option value="colorBlindFriendly">Color Blind Friendly</option>
+        </select>
+    </div>
+
+    <!-- Existing content and other HTML elements -->
+
+    <script>
+        // Font Size Changing Options
+        document.getElementById('increaseFontSize').addEventListener('click', function() {
+            changeFontSize(2); // Increase font size by 2 pixels
+        });
+
+        document.getElementById('decreaseFontSize').addEventListener('click', function() {
+            changeFontSize(-2); // Decrease font size by 2 pixels
+        });
+
+        function changeFontSize(changeAmount) {
+            var currentSize = parseInt(window.getComputedStyle(document.body).fontSize);
+            document.body.style.fontSize = (currentSize + changeAmount) + 'px';
+        }
+
+        // Color Change Options
+        document.getElementById('colorTheme').addEventListener('change', function() {
+            var selectedTheme = this.value;
+            changeColorTheme(selectedTheme);
+        });
+
+        function changeColorTheme(theme) {
+            switch (theme) {
+                case 'default':
+                    document.body.style.backgroundColor = ''; // Set default background color
+                    document.body.style.color = ''; // Set default text color
+                    // Additional styling adjustments for default theme
+                    break;
+                case 'highContrast':
+                    document.body.style.backgroundColor = '#ffffff'; // Set high contrast background color
+                    document.body.style.color = '#000000'; // Set high contrast text color
+                    // Additional styling adjustments for high contrast theme
+                    break;
+                case 'colorBlindFriendly':
+                    document.body.style.backgroundColor = '#f0f0f0'; // Set color blind friendly background color
+                    document.body.style.color = '#333333'; // Set color blind friendly text color
+                    // Additional styling adjustments for color blind friendly theme
+                    break;
+                default:
+                    break;
+            }
+        }
+    </script>
+</body>
     <link rel="stylesheet" href="styles.css">
     </head>
     <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
@@ -27,7 +92,7 @@
                 //mouse over event on navigatin bar
                 $(".nav").on("mouseover", function () {
                     //setbackground color 
-                    $(this).parent().css("background-color", "black");
+                    $(this).parent().css("background-color", "pink");
                 })
     
                  //mouse out event on navigatin bar
@@ -52,21 +117,21 @@
     
             .nav a {
                 display: block;
-                background: #111;
+                background: #2e0528;
                 color: #fff;
                 text-decoration: none;
                 padding: 0.8em 1.8em;
                 text-transform: uppercase;
                 font-size: 80%;
                 letter-spacing: 2px;
-                text-shadow: 0 -1px 0 #000;
+                text-shadow: 0 -1px 0 #2e0528;
                 position: relative;
             }
     
             .nav {
                 vertical-align: top;
                 display: inline-block;
-                box-shadow: 1px -1px -1px 1px #000, -1px 1px -1px 1px #fff, 0 0 6px 3px #fff;
+                box-shadow: 1px -1px -1px 1px #460742, -1px 1px -1px 1px #fff, 0 0 6px 3px #fff;
                 border-radius: 6px;
             }
     
@@ -217,6 +282,42 @@
     <body>
     <h2>Sadaq Azam Portfolio</h2>
     <div class="container">
+        <div id="contact-section">
+            <h2>Contact Me</h2>
+            <form id="contactForm">
+                <label for="fullName">Full Name:</label>
+                <input type="text" id="fullName" name="fullName" required>
+        
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+        
+                <label>Are you a current student or alumni?</label>
+                <input type="radio" id="current" name="status" value="Current Student">
+                <label for="current">Current Student</label>
+                <input type="radio" id="alumni" name="status" value="Alumni">
+                <label for="alumni">Alumni</label>
+        
+                <label for="services">Which services are you interested in?</label>
+                <input type="checkbox" id="consulting" name="services" value="Consulting">
+                <label for="consulting">Consulting</label>
+                <input type="checkbox" id="development" name="services" value="Development">
+                <label for="development">Development</label>
+        
+                <label for="message">Message:</label>
+                <textarea id="message" name="message"></textarea>
+        
+                <label for="experience">Rate your website experience:</label>
+                <select id="experience" name="experience">
+                    <option value="great">Great</option>
+                    <option value="good">Good</option>
+                    <option value="average">Average</option>
+                    <option value="bad">Bad</option>
+                </select>
+        
+                <input type="submit" value="Submit">
+                <input type="reset" value="Reset">
+            </form>
+        </div>
         <table width="1000px" border="1px">
         <tr>
             <td>
